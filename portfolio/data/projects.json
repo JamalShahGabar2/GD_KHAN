@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Project One",
+    "description": "A web application that does amazing things.",
+    "image": "assets/images/project1.png",
+    "link": "https://example.com/project-one"
+  },
+  {
+    "title": "Project Two",
+    "description": "An innovative solution for modern problems.",
+    "image": "assets/images/project2.png",
+    "link": "https://example.com/project-two"
+  }
+]

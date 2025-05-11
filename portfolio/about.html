@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: var(--background);
+            color: var(--text-main);
+        }
+        h1, h2, h3, h4 {
+            color: var(--primary);
+        }
+        a {
+            color: var(--secondary);
+        }
+        a:hover {
+            color: var(--highlight);
+        }
+        .responsive-img {
+            border: 2px solid var(--secondary);
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Dr. Ghulam Dastgir Khan",
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "Hiroshima University"
+      },
+      "jobTitle": "Assistant Professor",
+      "email": "gdkhan@hiroshima-u.ac.jp",
+      "sameAs": [
+        "https://scholar.google.com/citations?user=XTqEg3AAAAAJ",
+        "https://orcid.org/0000-0002-5704-363X"
+      ]
+    }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="section-title">About Dr. Ghulam Dastgir Khan</h1>
+        <div class="profile">
+            <img src="https://tse2.mm.bing.net/th?id=OIP.VgDXb_2U06fX_ZtMkNCLZwHaJh&pid=Api" alt="Dr. Ghulam Dastgir Khan" class="responsive-img">
+            <p class="text-gray-800">
+                Dr. Ghulam Dastgir Khan is an Assistant Professor at Hiroshima University's Graduate School of Innovation and Practice for Smart Society (SmaSo). His research focuses on empirical development economics, with particular attention to migration, rural development, agriculture, and extractive industries. Dr. Khan is dedicated to generating empirical evidence to support policymakers in addressing complex development challenges. Through his research, he aims to make meaningful contributions to the advancement of development policy.
+            </p>
+        </div>
+
+        <h2 class="section-title">🎓 Academic Background</h2>
+        <div class="mt-20">
+            <h3 class="text-2xl font-bold mb-10 text-center"><span class="gradient-text">ACADEMIC</span> JOURNEY</h3>
+            <div class="relative">
+                <div class="border-l-2 border-gray-700 ml-8 md:ml-16">
+                    <!-- Assistant Professor -->
+                    <div class="relative timeline-item pl-10 md:pl-16 pb-10">
+                        <div class="card-3d bg-opacity-10 bg-white backdrop-blur-md rounded-xl p-6">
+                            <h4 class="text-xl font-bold mb-2">Assistant Professor</h4>
+                            <div class="text-sm text-gray-400 mb-3">IDEC Institute, Hiroshima University | 2023 – Present</div>
+                            <p class="text-gray-800">Focusing on empirical development economics, rural development, and migration research using causal inference techniques.</p>
+                        </div>
+                    </div>
+                    <!-- PhD -->
+                    <div class="relative timeline-item pl-10 md:pl-16 pb-10">
+                        <div class="card-3d bg-opacity-10 bg-white backdrop-blur-md rounded-xl p-6">
+                            <h4 class="text-xl font-bold mb-2">Ph.D. in Development Policy</h4>
+                            <div class="text-sm text-gray-400 mb-3">Hiroshima University | 2019 – 2023</div>
+                            <p class="text-gray-300">Researched policy effectiveness in fragile economies, focusing on extractive industries and household welfare.</p>
+                        </div>
+                    </div>
+                    <!-- MSc -->
+                    <div class="relative timeline-item pl-10 md:pl-16 pb-10">
+                        <div class="card-3d bg-opacity-10 bg-white backdrop-blur-md rounded-xl p-6">
+                            <h4 class="text-xl font-bold mb-2">M.Sc. in Development Policy</h4>
+                            <div class="text-sm text-gray-400 mb-3">Hiroshima University | 2017 – 2019</div>
+                            <p class="text-gray-300">Gained strong foundation in rural development, impact evaluation, and development economics frameworks.</p>
+                        </div>
+                    </div>
+                    <!-- M.Com -->
+                    <div class="relative timeline-item pl-10 md:pl-16 pb-10">
+                        <div class="card-3d bg-opacity-10 bg-white backdrop-blur-md rounded-xl p-6">
+                            <h4 class="text-xl font-bold mb-2">Master of Commerce in Accounting</h4>
+                            <div class="text-sm text-gray-400 mb-3">University of Peshawar | 2013 – 2015</div>
+                            <p class="text-gray-300">Developed core skills in accounting, public finance, and statistical analysis relevant to policy design.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">🧠 Research Interests</h2>
+        <ul>
+            <li>Impact Evaluation</li>
+            <li>Development Policy</li>
+            <li>Mining and Extractive Industries</li>
+            <li>Environmental Impact Assessment</li>
+            <li>Migration</li>
+            <li>Agricultural and Rural Development</li>
+        </ul>
+
+        <h2 class="section-title">📚 Selected Publications</h2>
+        <ul id="publications-list">
+          <!-- Publications will be dynamically loaded here -->
+        </ul>
+        <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            fetch("publications.json")
+              .then(res => res.json())
+              .then(data => {
+                const pubList = document.getElementById("publications-list");
+                pubList.innerHTML = data.map(pub => `
+                  <li>
+                    <a href="${pub.link}" target="_blank" class="text-blue-600 hover:underline">
+                      ${pub.title} (${pub.year})
+                    </a>
+                  </li>
+                `).join('');
+              })
+              .catch(err => console.error('Error loading publications:', err));
+          });
+        </script>
+
+        <h2 class="section-title">📧 Contact</h2>
+        <p>Email: <a href="mailto:gdkhan@hiroshima-u.ac.jp">gdkhan@hiroshima-u.ac.jp</a></p>
+    </div>
+</body>
+</html>

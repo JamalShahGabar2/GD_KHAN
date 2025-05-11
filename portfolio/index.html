@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Ghulam Dastgir Khan | Development Economist</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+    :root {
+      --primary: #2c3e50;        /* Deep navy blue */
+      --secondary: #2980b9;      /* Royal blue */
+      --highlight: #e67e22;      /* Burnt orange */
+      --background: #f9f9f9;     /* Light gray white */
+      --text-main: #2d3436;      /* Charcoal */
+      --text-muted: #7f8c8d;     /* Soft gray */
+      --card-bg: #ffffff;        /* White */
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--background);
+      color: var(--text-main);
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Orbitron', sans-serif;
+      color: var(--primary);
+    }
+    a {
+      color: var(--secondary);
+    }
+    a:hover {
+      color: var(--highlight);
+    }
+    .gradient-text {
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .gradient-bg {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+    }
+    .card-3d {
+      background-color: var(--card-bg);
+      transform-style: preserve-3d;
+      transition: transform 0.5s ease;
+      box-shadow: 0 0 30px rgba(44, 62, 80, 0.2);
+    }
+    .card-3d:hover {
+      transform: rotateY(10deg) rotateX(5deg) translateY(-10px);
+    }
+    .glow {
+      animation: none;
+      box-shadow: none;
+    }
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background: var(--highlight);
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    .scroll-indicator {
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-20px);
+      }
+      60% {
+        transform: translateY(-10px);
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Person",
+    "name": "Dr. Ghulam Dastgir Khan",
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "Hiroshima University"
+    },
+    "jobTitle": "Assistant Professor",
+    "email": "gdkhan@hiroshima-u.ac.jp",
+    "sameAs": [
+      "https://scholar.google.com/citations?user=XTqEg3AAAAAJ",
+      "https://orcid.org/0000-0002-5704-363X"
+    ]
+  }
+  </script>
+  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="fixed w-full z-50 bg-opacity-80 backdrop-blur-md bg-dark">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold gradient-text">Dr. Ghulam Dastgir Khan</h1>
+      <ul class="hidden md:flex space-x-6 font-medium">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#research" class="nav-link">Research</a></li>
+        <li><a href="#publications" class="nav-link">Publications</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-0">
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 mb-10 md:mb-0">
+          <h1 class="text-4xl md:text-6xl font-bold mb-4">
+            HI, I'M <span class="gradient-text">Dr. Ghulam Dastgir Khan</span>
+          </h1>
+          <h2 class="text-2xl md:text-4xl font-bold mb-6">
+            ASSISTANT PROFESSOR <span class="gradient-text">DEVELOPMENT ECONOMIST</span>
+          </h2>
+          <p class="text-gray-800 mb-8 max-w-lg">
+            Specializing in empirical development economics, with focus on migration, rural development, agriculture, and extractive industries.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#projects" class="gradient-bg text-dark font-bold px-6 py-3 rounded-full hover:opacity-90 transition">VIEW WORK</a>
+            <a href="#contact" class="border-gradient text-white font-bold px-6 py-3 rounded-full hover:bg-opacity-20 transition">CONTACT ME</a>
+          </div>
+        </div>
+        <div class="md:w-1/2 relative">
+          <div class="relative w-64 h-64 md:w-80 md:h-80 mx-auto floating">
+            <div class="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 opacity-20 blur-xl"></div>
+            <div class="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 opacity-10 blur-xl"></div>
+            <div class="relative rounded-full overflow-hidden border-4 border-opacity-20 border-white w-full h-full">
+              <img src="GD.jpeg" alt="Dr. Ghulam Dastgir Khan" class="w-full h-full object-cover">
+            </div>
+          </div>
+          <div class="absolute -bottom-10 -right-10 w-32 h-32 rounded-full bg-blue-500 opacity-20 blur-3xl"></div>
+          <div class="absolute -top-10 -left-10 w-32 h-32 rounded-full bg-purple-500 opacity-20 blur-3xl"></div>
+        </div>
+      </div>
+      <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 scroll-indicator">
+        <a href="#about" class="text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-5xl font-bold mb-4"><span class="gradient-text">ABOUT</span> ME</h2>
+        <div class="w-20 h-1 gradient-bg mx-auto"></div>
+      </div>
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="md:w-1/3 mb-10 md:mb-0 relative">
+          <div class="card-3d bg-opacity-10 bg-white backdrop-blur-md rounded-xl p-1">
+            <img src="GD.jpeg" alt="Dr. Ghulam Dastgir Khan" class="w-full h-auto rounded-lg">
+          </div>
+          <div class="absolute -z-10 -top-10 -left-10 w-64 h-64 rounded-full bg-blue-500 opacity-10 blur-3xl"></div>
+        </div>
+        <div class="md:w-2/3 md:pl-16">
+          <h3 class="text-2xl font-bold mb-6">I'm an <span class="gradient-text">Assistant Professor</span> in Development Economics at Hiroshima University</h3>
+          <p class="text-gray-800 mb-6">
+            I specialize in empirical development economics with a focus on migration, rural development, agriculture, and extractive industries. My work uses causal inference techniques to design evidence-based policies for fragile and low-income economies.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div>
+              <div class="flex items-center mb-2">
+                <span class="font-bold mr-2">Name:</span>
+                <span class="text-gray-300">Dr. Ghulam Dastgir Khan</span>
+              </div>
+              <div class="flex items-center mb-2">
+                <span class="font-bold mr-2">Email:</span>
+                <span class="text-gray-300">gdkhan@hiroshima-u.ac.jp</span>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center mb-2">
+                <span class="font-bold mr-2">Position:</span>
+                <span class="text-gray-300">Assistant Professor</span>
+              </div>
+              <div class="flex items-center mb-2">
+                <span class="font-bold mr-2">Location:</span>
+                <span class="text-gray-300">Higashi-Hiroshima, Japan</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-4">
+            <div class="border-gradient px-6 py-2 rounded-full">Development Economics</div>
+            <div class="border-gradient px-6 py-2 rounded-full">Migration Research</div>
+            <div class="border-gradient px-6 py-2 rounded-full">Causal Inference</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Section -->
+  <section id="research" class="py-20 bg-dark text-light">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl md:text-5xl font-bold text-center gradient-text mb-12">Research Focus Areas</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="card-3d p-6 rounded-lg gradient-bg text-center">
+          <h3 class="text-xl font-semibold mb-2">Migration Studies</h3>
+          <p class="text-gray-600">Socioeconomic drivers and outcomes of labor migration and remittances.</p>
+        </div>
+        <div class="card-3d p-6 rounded-lg gradient-bg text-center">
+          <h3 class="text-xl font-semibold mb-2">Extractive Industries</h3>
+          <p class="text-gray-300">Impact of mining projects on relocation, income, and land access.</p>
+        </div>
+        <div class="card-3d p-6 rounded-lg gradient-bg text-center">
+          <h3 class="text-xl font-semibold mb-2">Climate & Agriculture</h3>
+          <p class="text-gray-300">Climate shocks, productivity, and food security in rural Asia.</p>
+        </div>
+        <div class="card-3d p-6 rounded-lg gradient-bg text-center">
+          <h3 class="text-xl font-semibold mb-2">Development Policy</h3>
+          <p class="text-gray-300">Evidence-based policy analysis for economic and rural development.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Publications Section -->
+  <section id="publications" class="py-20 bg-dark text-light">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl md:text-5xl font-bold text-center gradient-text mb-12">Recent <span class="gradient-text">Publications</span></h2>
+      <div id="publication-list" class="grid md:grid-cols-2 gap-8"></div>
+    </div>
+  </section>
+
+  <!-- Supervision Section -->
+  <section id="supervision" class="py-20 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-5xl font-bold mb-4">Graduate <span class="gradient-text">Supervision</span></h2>
+        <div class="w-20 h-1 gradient-bg mx-auto"></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="card-3d bg-opacity-10 bg-white backdrop-blur-md rounded-xl p-6">
+          <h3 class="text-xl font-bold mb-2">Amir Yousaf (Ph.D.)</h3>
+          <p class="text-gray-700">Research on extractive economies and displacement patterns in post-conflict Afghanistan.</p>
+        </div>
+        <div class="card-3d bg-opacity-10 bg-white backdrop-blur-md rounded-xl p-6">
+          <h3 class="text-xl font-bold mb-2">Sana Ahmed (M.A.)</h3>
+          <p class="text-gray-700">Studying the effects of targeted food security interventions in rural Pakistan.</p>
+        </div>
+        <div class="card-3d bg-opacity-10 bg-white backdrop-blur-md rounded-xl p-6">
+          <h3 class="text-xl font-bold mb-2">Mohammad Rahman (Ph.D.)</h3>
+          <p class="text-gray-700">Causal inference in migration behavior and remittance patterns in Bangladesh.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Google Scholar Metrics Section -->
+  <section id="metrics" class="py-20 bg-dark text-light">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-5xl font-bold mb-12">Scholar <span class="gradient-text">Metrics</span></h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="card-3d p-6 rounded-lg gradient-bg text-dark">
+          <h3 class="text-xl font-bold mb-2">Citations</h3>
+          <p class="text-3xl font-extrabold">200+</p>
+        </div>
+        <div class="card-3d p-6 rounded-lg gradient-bg text-dark">
+          <h3 class="text-xl font-bold mb-2">h-index</h3>
+          <p class="text-3xl font-extrabold">6</p>
+        </div>
+        <div class="card-3d p-6 rounded-lg gradient-bg text-dark">
+          <h3 class="text-xl font-bold mb-2">i10-index</h3>
+          <p class="text-3xl font-extrabold">5</p>
+        </div>
+      </div>
+      <div class="mt-10">
+        <a href="https://scholar.google.com/citations?user=XTqEg3AAAAAJ" target="_blank" class="underline text-blue-300 font-medium">View Full Google Scholar Profile</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Media & Events Section -->
+  <section id="media" class="py-20 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16"></div>
+        <h2 class="text-3xl md:text-5xl font-bold mb-4">Media & <span class="gradient-text">Events</span></h2>
+        <div class="w-20 h-1 gradient-bg mx-auto"></div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="card-3d bg-opacity-10 bg-white backdrop-blur-md rounded-xl p-6">
+          <h3 class="text-xl font-bold mb-2">Interview with DevPolicyBlog</h3>
+          <p class="text-gray-700">Spoke on the challenges of displacement and community compensation in Afghanistan's mining sector.</p>
+        </div>
+        <div class="card-3d bg-opacity-10 bg-white backdrop-blur-md rounded-xl p-6">
+          <h3 class="text-xl font-bold mb-2">UNDP Migration Roundtable 2023</h3>
+          <p class="text-gray-700">Presented research on the economic effects of migration remittances and household welfare.</p>
+        </div>
+        <div class="card-3d bg-opacity-10 bg-white backdrop-blur-md rounded-xl p-6">
+          <h3 class="text-xl font-bold mb-2">IDEC Annual Symposium</h3>
+          <p class="text-gray-700">Panel speaker discussing climate vulnerability and adaptive development strategies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Upcoming Events Section -->
+  <section id="events" class="py-20">
+    <h2 class="text-3xl font-bold text-center mb-6">Upcoming Events</h2>
+    <ul class="list-disc pl-6">
+      <li><strong>June 2024</strong>: IDEC Panel on Displacement Economies (Hiroshima)</li>
+      <li><strong>August 2024</strong>: UNDP Evaluation Workshop (Bangkok)</li>
+    </ul>
+  </section>
+
+  <!-- Teaching Section -->
+  <section id="teaching" class="py-20 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-5xl font-bold mb-4">Courses <span class="gradient-text">Taught</span></h2>
+        <div class="w-20 h-1 gradient-bg mx-auto"></div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="card-3d bg-opacity-10 bg-white backdrop-blur-md rounded-xl p-6">
+          <h3 class="text-xl font-bold mb-2">Agile Workshop Short-Term Training</h3>
+          <p class="text-gray-700">An undergraduate workshop exploring agile methodology and real-world problem-solving.</p>
+        </div>
+        <div class="card-3d bg-opacity-10 bg-white backdrop-blur-md rounded-xl p-6">
+          <h3 class="text-xl font-bold mb-2">Science History for Humanities and Social Sciences</h3>
+          <p class="text-gray-700">A graduate-level overview of scientific evolution and its philosophical roots.</p>
+        </div>
+        <div class="card-3d bg-opacity-10 bg-white backdrop-blur-md rounded-xl p-6">
+          <h3 class="text-xl font-bold mb-2">Research Method</h3>
+          <p class="text-gray-700">Graduate-level course on research design, methodology, and data analysis techniques.</p>
+        </div>
+        <div class="card-3d bg-opacity-10 bg-white backdrop-blur-md rounded-xl p-6">
+          <h3 class="text-xl font-bold mb-2">Development Policy and Practice</h3>
+          <p class="text-gray-700">Examining real-world policies in development through case studies and field experiences.</p>
+        </div>
+        <div class="card-3d bg-opacity-10 bg-white backdrop-blur-md rounded-xl p-6">
+          <h3 class="text-xl font-bold mb-2">Practical Seminar on International Cooperation</h3>
+          <p class="text-gray-700">Advanced seminar guiding graduate students through cooperation project planning and analysis.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Academic Timeline Section -->
+  <section id="timeline" class="py-20 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-5xl font-bold mb-4">Academic <span class="gradient-text">Journey</span></h2>
+        <div class="w-20 h-1 gradient-bg mx-auto"></div>
+      </div>
+      <div class="relative">
+        <div class="border-l-2 border-gray-700 ml-8 md:ml-16">
+          <!-- Assistant Professor -->
+          <div class="relative timeline-item pl-10 md:pl-16 pb-10">
+            <div class="card-3d bg-opacity-10 bg-white backdrop-blur-md rounded-xl p-6">
+              <h4 class="text-xl font-bold mb-2">Assistant Professor</h4>
+              <div class="text-sm text-gray-400 mb-3">IDEC Institute, Hiroshima University | 2023 – Present</div>
+              <p class="text-gray-300">Focusing on empirical development economics, rural development, and migration research using causal inference techniques.</p>
+            </div>
+          </div>
+          <!-- PhD -->
+          <div class="relative timeline-item pl-10 md:pl-16 pb-10">
+            <div class="card-3d bg-opacity-10 bg-white backdrop-blur-md rounded-xl p-6">
+              <h4 class="text-xl font-bold mb-2">Ph.D. in Development Policy</h4>
+              <div class="text-sm text-gray-400 mb-3">Hiroshima University | 2019 – 2023</div>
+              <p class="text-gray-300">Researched policy effectiveness in fragile economies, focusing on extractive industries and household welfare.</p>
+            </div>
+          </div>
+          <!-- MSc -->
+          <div class="relative timeline-item pl-10 md:pl-16 pb-10">
+            <div class="card-3d bg-opacity-10 bg-white backdrop-blur-md rounded-xl p-6">
+              <h4 class="text-xl font-bold mb-2">M.Sc. in Development Policy</h4>
+              <div class="text-sm text-gray-400 mb-3">Hiroshima University | 2017 – 2019</div>
+              <p class="text-gray-300">Gained strong foundation in rural development, impact evaluation, and development economics frameworks.</p>
+            </div>
+          </div>
+          <!-- M.Com -->
+          <div class="relative timeline-item pl-10 md:pl-16 pb-10">
+            <div class="card-3d bg-opacity-10 bg-white backdrop-blur-md rounded-xl p-6">
+              <h4 class="text-xl font-bold mb-2">Master of Commerce in Accounting</h4>
+              <div class="text-sm text-gray-400 mb-3">University of Peshawar | 2013 – 2015</div>
+              <p class="text-gray-300">Developed core skills in accounting, public finance, and statistical analysis relevant to policy design.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Awards Section -->
+  <section id="awards" class="py-20 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-5xl font-bold mb-4">Awards & <span class="gradient-text">Honors</span></h2>
+        <div class="w-20 h-1 gradient-bg mx-auto"></div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="card-3d bg-opacity-10 bg-white backdrop-blur-md rounded-xl p-6">
+          <h3 class="text-xl font-bold mb-2">Best Research Paper Award</h3>
+          <p class="text-gray-700">Awarded by the IDEC Institute for outstanding research on migration and rural development.</p>
+        </div>
+        <div class="card-3d bg-opacity-10 bg-white backdrop-blur-md rounded-xl p-6">
+          <h3 class="text-xl font-bold mb-2">Fulbright Scholarship</h3>
+          <p class="text-gray-700">Received for pursuing advanced studies in development economics at Hiroshima University.</p>
+        </div>
+        <div class="card-3d bg-opacity-10 bg-white backdrop-blur-md rounded-xl p-6">
+          <h3 class="text-xl font-bold mb-2">Young Economist Award</h3>
+          <p class="text-gray-700">Recognized for impactful research on extractive industries and socio-economic policies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Languages and Geographic Focus Section -->
+  <section id="languages" class="py-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl md:text-5xl font-bold text-center mb-12">Languages & Geographic Focus</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">Languages</h3>
+          <ul class="list-disc pl-6">
+            <li>English</li>
+            <li>Pashto</li>
+            <li>Japanese</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">Geographic Focus</h3>
+          <ul class="list-disc pl-6">
+            <li>Afghanistan</li>
+            <li>Bangladesh</li>
+            <li>Kenya</li>
+            <li>South Sudan</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Collaborators Section -->
+  <section id="collaborators" class="py-20 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-5xl font-bold mb-12">Collaborators</h2>
+      <div class="flex justify-center space-x-8">
+        <img src="assets/logos/jsps.png" alt="JSPS" class="h-16">
+        <img src="assets/logos/undp.png" alt="UNDP" class="h-16">
+        <img src="assets/logos/idec.png" alt="IDEC" class="h-16">
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-dark text-light">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl md:text-5xl font-bold text-center gradient-text mb-10">Contact</h2>
+      <div class="grid md:grid-cols-2 gap-10">
+        <div>
+          <p class="mb-2">Dr. Ghulam Dastgir Khan</p>
+          <p class="mb-2">Assistant Professor<br>IDEC Institute, Hiroshima University</p>
+          <p class="mb-2"><i class="fas fa-envelope mr-2"></i><a href="mailto:gdkhan@hiroshima-u.ac.jp" class="underline">gdkhan@hiroshima-u.ac.jp</a></p>
+          <p><i class="fas fa-map-marker-alt mr-2"></i> 1-3-2 Kagamiyama, Higashi-Hiroshima, Japan</p>
+        </div>
+        <form class="space-y-4">
+          <input type="text" placeholder="Your Name" required class="contact-input w-full px-4 py-3 rounded-lg focus:outline-none">
+          <input type="email" placeholder="Your Email" required class="contact-input w-full px-4 py-3 rounded-lg focus:outline-none">
+          <textarea rows="4" placeholder="Your Message" required class="contact-input w-full px-4 py-3 rounded-lg focus:outline-none"></textarea>
+          <button type="submit" class="gradient-bg text-dark font-bold px-8 py-3 rounded-full hover:opacity-90 transition w-full md:w-auto">Send</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="text-xl font-bold gradient-text mb-4 md:mb-0">Dr. Ghulam Dastgir Khan</div>
+        <div class="text-gray-400 text-sm">
+          © 2024 Dr. Ghulam Dastgir Khan. All rights reserved.
+        </div>
+        <div class="mt-4 md:mt-0">
+          <a href="#home" class="text-white" title="Back to top">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="fixed bottom-4 right-4 bg-blue-600 text-white p-3 rounded-full shadow-lg hidden">
+    ↑
+  </button>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      fetch("publications.json")
+        .then(res => res.json())
+        .then(data => {
+          const container = document.getElementById("publication-list");
+          container.innerHTML = data.map(pub => `
+            <div class="card-3d bg-opacity-10 bg-white backdrop-blur-md rounded-xl p-6">
+              <h3 class="text-xl font-bold mb-2 text-dark">${pub.title} <span class="text-sm text-gray-500">(${pub.year})</span></h3>
+              <p class="text-gray-700 mb-3">${pub.description}</p>
+              <a href="${pub.link}" target="_blank" class="text-blue-600 underline font-medium">View Publication</a>
+            </div>
+          `).join('');
+        })
+        .catch(err => console.error('Error loading publications:', err));
+    });
+
+    // Back to Top Button Logic
+    const backToTop = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTop.classList.remove('hidden');
+      } else {
+        backToTop.classList.add('hidden');
+      }
+    });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
