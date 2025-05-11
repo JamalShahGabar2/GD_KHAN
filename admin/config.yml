@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: JamalShahGabar2/GD_KHAN
   branch: main
 
 media_folder: "static/img/uploads"
@@ -8,7 +9,7 @@ public_folder: "/img/uploads"
 media_library:
   name: uploadcare
   config:
-    publicKey: demo
+    publicKey: "your-valid-public-key"
 
 collections:
   - name: "about"
