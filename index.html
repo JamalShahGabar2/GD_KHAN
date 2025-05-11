@@ -89,6 +89,10 @@
         transform: translateY(-10px);
       }
     }
+    .glassy {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+    }
   </style>
   <script type="application/ld+json">
   {
@@ -107,11 +111,11 @@
     ]
   }
   </script>
-  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  <script src="https://unpkg.com/netlify-cms@^2.10.0/dist/netlify-cms.js"></script>
 </head>
 <body>
   <!-- Navigation -->
-  <nav class="fixed w-full z-50 bg-opacity-80 backdrop-blur-md bg-dark">
+  <nav class="fixed w-full z-50 bg-opacity-80 backdrop-blur-md glassy">
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
       <h1 class="text-2xl font-bold gradient-text">Dr. Ghulam Dastgir Khan</h1>
       <ul class="hidden md:flex space-x-6 font-medium">
@@ -174,7 +178,7 @@
       </div>
       <div class="flex flex-col md:flex-row items-center">
         <div class="md:w-1/3 mb-10 md:mb-0 relative">
-          <div class="card-3d bg-opacity-10 bg-white backdrop-blur-md rounded-xl p-1">
+          <div class="card-3d glassy bg-opacity-10 bg-white backdrop-blur-md rounded-xl p-1">
             <img src="GD.jpeg" alt="Dr. Ghulam Dastgir Khan" class="w-full h-auto rounded-lg">
           </div>
           <div class="absolute -z-10 -top-10 -left-10 w-64 h-64 rounded-full bg-blue-500 opacity-10 blur-3xl"></div>
@@ -207,9 +211,9 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-4">
-            <div class="border-gradient px-6 py-2 rounded-full">Development Economics</div>
-            <div class="border-gradient px-6 py-2 rounded-full">Migration Research</div>
-            <div class="border-gradient px-6 py-2 rounded-full">Causal Inference</div>
+            <div class="border-gradient px-6 py-2 rounded-full glassy">Development Economics</div>
+            <div class="border-gradient px-6 py-2 rounded-full glassy">Migration Research</div>
+            <div class="border-gradient px-6 py-2 rounded-full glassy">Causal Inference</div>
           </div>
         </div>
       </div>
@@ -492,30 +496,8 @@
     </div>
   </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="py-20">
-    <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-3xl md:text-5xl font-bold text-center mb-12">Projects</h2>
-      <div class="scrollable-container">
-        <div class="card">
-          <h3>Project 1</h3>
-          <p>Description of project 1.</p>
-        </div>
-        <div class="card">
-          <h3>Project 2</h3>
-          <p>Description of project 2.</p>
-        </div>
-        <div class="card">
-          <h3>Project 3</h3>
-          <p>Description of project 3.</p>
-        </div>
-        <!-- Add more cards as needed -->
-      </div>
-    </div>
-  </section>
-
   <!-- Footer -->
-  <footer class="py-10 border-t border-gray-800">
+  <footer class="py-10 border-t border-gray-800 glassy">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row justify-between items-center">
         <div class="text-xl font-bold gradient-text mb-4 md:mb-0">Dr. Ghulam Dastgir Khan</div>
@@ -534,7 +516,7 @@
   </footer>
 
   <!-- Back to Top Button -->
-  <button id="back-to-top" class="fixed bottom-4 right-4 bg-blue-600 text-white p-3 rounded-full shadow-lg hidden">
+  <button id="back-to-top" class="fixed bottom-4 right-4 glassy text-white p-3 rounded-full shadow-lg hidden">
     ↑
   </button>
 
