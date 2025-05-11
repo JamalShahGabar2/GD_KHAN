@@ -1,0 +1,46 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "static/img/uploads"
+public_folder: "/img/uploads"
+
+media_library:
+  name: uploadcare
+  config:
+    publicKey: demo
+
+collections:
+  - name: "about"
+    label: "About Section"
+    files:
+      - label: "About Me"
+        name: "about"
+        file: "content/about.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "projects"
+    label: "Projects"
+    folder: "content/projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Link", name: "link", widget: "string" }
+
+  - name: "publications"
+    label: "Publications"
+    folder: "content/publications"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Authors", name: "authors", widget: "string" }
+      - { label: "Year", name: "year", widget: "number" }
+      - { label: "Journal", name: "journal", widget: "string" }
+      - { label: "Abstract", name: "abstract", widget: "text" }
+      - { label: "Link", name: "link", widget: "string" }
