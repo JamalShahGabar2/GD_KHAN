@@ -6,11 +6,10 @@ backend:
 media_folder: "static/img/uploads"
 public_folder: "/img/uploads"
 
-# Optional: Replace with a valid Uploadcare public key or remove if not needed
 media_library:
   name: uploadcare
   config:
-    publicKey: "your-valid-public-key"
+    publicKey: "your-valid-public-key" # Replace with a valid Uploadcare public key if needed
 
 collections:
   - name: "about"
