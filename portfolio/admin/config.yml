@@ -7,36 +7,14 @@ public_folder: "/img/uploads"
 
 collections:
   - name: "about"
-    label: "About"
+    label: "About Section"
     files:
-      - name: "about"
-        label: "About Page"
+      - label: "About Me"
+        name: "about"
         file: "content/about.md"
         fields:
-          - { name: "title", label: "Title", widget: "string" }
-          - { name: "body", label: "Body", widget: "markdown" }
-
-  - name: "publications"
-    label: "Publications"
-    folder: "content/publications"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { name: "title", label: "Title", widget: "string" }
-      - { name: "authors", label: "Authors", widget: "string" }
-      - { name: "journal", label: "Journal", widget: "string" }
-      - { name: "year", label: "Year", widget: "number" }
-      - { name: "abstract", label: "Abstract", widget: "text" }
-      - { name: "link", label: "Link", widget: "string" }
-
-  - name: "teaching"
-    label: "Teaching"
-    folder: "content/teaching"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { name: "course_name", label: "Course Name", widget: "string" }
-      - { name: "description", label: "Description", widget: "text" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
 
   - name: "projects"
     label: "Projects"
@@ -44,16 +22,20 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { name: "title", label: "Project Title", widget: "string" }
-      - { name: "description", label: "Description", widget: "markdown" }
-      - { name: "image", label: "Image URL", widget: "string" }
-      - { name: "link", label: "Project Link", widget: "string" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Link", name: "link", widget: "string" }
 
-  - name: "blog"
-    label: "Blog"
-    folder: "content/blog"
+  - name: "publications"
+    label: "Publications"
+    folder: "content/publications"
     create: true
     slug: "{{slug}}"
     fields:
-      - { name: "title", label: "Title", widget: "string" }
-      - { name: "body", label: "Body", widget: "markdown" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Authors", name: "authors", widget: "string" }
+      - { label: "Year", name: "year", widget: "number" }
+      - { label: "Journal", name: "journal", widget: "string" }
+      - { label: "Abstract", name: "abstract", widget: "text" }
+      - { label: "Link", name: "link", widget: "string" }
