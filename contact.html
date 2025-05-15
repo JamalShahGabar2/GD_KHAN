@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <style>
       body {
         background-color: var(--background);
@@ -24,7 +26,11 @@
       }
     </style>
 </head>
-<body>
+<body class="bg-gray-100 text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white shadow-md z-50">
+    </nav>
+
     <!-- Contact Section -->
     <section id="contact" class="py-20 relative overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -101,8 +107,8 @@
         </div>
       </div>
     </section>
-    <footer class="py-10 text-center">
-      <p>This site stores no personal data. Research files and publications follow LSEPI and Hiroshima University open-access policies.</p>
+    <footer class="bg-gray-800 text-white py-6">
+      <p class="text-center">This site stores no personal data. Research files and publications follow LSEPI and Hiroshima University open-access policies.</p>
     </footer>
     <script>
       const form = document.getElementById('contactForm');

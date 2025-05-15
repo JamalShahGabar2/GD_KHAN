@@ -3,8 +3,13 @@ backend:
   repo: JamalShahGabar2/GD_KHAN
   branch: main
 
-media_folder: "img/uploads"
+media_folder: "static/img/uploads"
 public_folder: "/img/uploads"
+
+media_library:
+  name: uploadcare
+  config:
+    publicKey: "your-uploadcare-public-key"
 
 collections:
   - name: "about"
@@ -16,6 +21,17 @@ collections:
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "projects"
+    label: "Projects"
+    folder: "content/projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Link", name: "link", widget: "string" }
 
   - name: "publications"
     label: "Publications"

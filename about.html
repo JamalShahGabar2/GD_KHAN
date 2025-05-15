@@ -6,6 +6,8 @@
     <title>About Me</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             background-color: var(--background);
@@ -42,12 +44,16 @@
     }
     </script>
 </head>
-<body>
-    <div class="container">
-        <h1 class="section-title">About Dr. Ghulam Dastgir Khan</h1>
+<body class="bg-gray-100 text-gray-800">
+    <nav class="fixed top-0 w-full bg-white shadow-md z-50">
+        <!-- Navigation content -->
+    </nav>
+
+    <div class="container py-20">
+        <h1 class="text-4xl font-bold text-center mb-8">About Me</h1>
         <div class="profile">
             <img src="https://tse2.mm.bing.net/th?id=OIP.VgDXb_2U06fX_ZtMkNCLZwHaJh&pid=Api" alt="Dr. Ghulam Dastgir Khan" class="responsive-img">
-            <p class="text-gray-800">
+            <p class="text-lg text-gray-700 leading-relaxed">
                 Dr. Ghulam Dastgir Khan is an Assistant Professor at Hiroshima University's Graduate School of Innovation and Practice for Smart Society (SmaSo). His research focuses on empirical development economics, with particular attention to migration, rural development, agriculture, and extractive industries. Dr. Khan is dedicated to generating empirical evidence to support policymakers in addressing complex development challenges. Through his research, he aims to make meaningful contributions to the advancement of development policy.
             </p>
         </div>
@@ -128,5 +134,11 @@
         <h2 class="section-title">📧 Contact</h2>
         <p>Email: <a href="mailto:gdkhan@hiroshima-u.ac.jp">gdkhan@hiroshima-u.ac.jp</a></p>
     </div>
+
+    <footer class="bg-gray-800 text-white py-6">
+        <!-- Footer content -->
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
