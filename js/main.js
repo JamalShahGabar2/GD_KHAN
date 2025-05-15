@@ -87,4 +87,22 @@ document.addEventListener('DOMContentLoaded', () => {
   rightArrow.addEventListener('click', () => {
     slider.scrollBy({ left: 300, behavior: 'smooth' });
   });
+
+  // Menu Toggle
+  const menuToggle = document.getElementById("menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  menuToggle.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+
+  // Highlight active link
+  const links = document.querySelectorAll(".nav-link");
+  links.forEach(link => {
+    if (link.href === window.location.href) {
+      link.classList.add("text-blue-600", "font-bold");
+    } else {
+      link.classList.remove("text-blue-600", "font-bold");
+    }
+  });
 });

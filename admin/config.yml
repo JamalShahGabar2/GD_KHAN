@@ -3,13 +3,8 @@ backend:
   repo: JamalShahGabar2/GD_KHAN
   branch: main
 
-media_folder: "static/img/uploads"
+media_folder: "img/uploads"
 public_folder: "/img/uploads"
-
-media_library:
-  name: uploadcare
-  config:
-    publicKey: "your-valid-public-key" # Replace with a valid Uploadcare public key if needed
 
 collections:
   - name: "about"
